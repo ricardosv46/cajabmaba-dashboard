@@ -1,0 +1,10 @@
+query GetAllSuscriptores($pagina:Int,$numeroPagina:Int){
+  GetAllSuscriptores(pagina:$pagina,numeroPagina:$numeroPagina){
+    numeroTotal
+    data{
+      suscriptorId
+      nombres
+      email
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation CreateVendedora($input: VendedoraInput!) {
+	CreateVendedora(input: $input) {
+		id
+		nombres
+		estado
+	}
+}

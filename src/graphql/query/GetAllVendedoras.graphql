@@ -1,0 +1,15 @@
+query GetAllVendedoras($pagina: Int, $numeroPagina: Int, $estado: String) {
+	GetAllVendedoras(pagina: $pagina, numeroPagina: $numeroPagina, estado: $estado) {
+		numeroTotal
+		data {
+			id
+			tipoDocumento
+			numeroDocumento
+			nombres
+			apellidos
+			celular
+			email
+			estado
+		}
+	}
+}

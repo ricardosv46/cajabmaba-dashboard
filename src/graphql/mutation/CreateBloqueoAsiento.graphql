@@ -1,0 +1,3 @@
+mutation CreateBloqueoAsiento($input: [BloqueoAsientoInput!]) {
+	CreateBloqueoAsiento(input: $input)
+}

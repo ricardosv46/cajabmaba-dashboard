@@ -1,0 +1,3 @@
+mutation DeleteImagen($id: Int!){
+  DeleteImagen(id:$id)
+}

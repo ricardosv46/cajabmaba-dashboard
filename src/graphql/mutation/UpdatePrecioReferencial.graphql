@@ -1,0 +1,8 @@
+mutation UpdatePrecioReferencial($input: ReferencialInput!){
+  UpdatePrecioReferencial(input:$input){
+    referenciaId
+    tendido
+    titulo
+    precio
+  }
+}

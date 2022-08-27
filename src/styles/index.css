@@ -1,0 +1,6 @@
+/* FUENTES */
+@import '../assets/fonts/axiforma/stylesheet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,3 @@
+query GetReporteExcel($pedidoId: Int!) {
+  GetReporteExcel(pedidoId: $pedidoId)
+}

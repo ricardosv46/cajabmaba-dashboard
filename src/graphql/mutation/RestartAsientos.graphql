@@ -1,0 +1,3 @@
+mutation RestartAsientos($feriaId: Int!) {
+  RestartAsientos(feriaId: $feriaId)
+}

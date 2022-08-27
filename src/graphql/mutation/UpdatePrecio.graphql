@@ -1,0 +1,9 @@
+mutation UpdatePrecio($input: ButacaInput){
+  UpdatePrecio(input:$input){
+    butacaId
+    tendido
+    codigo
+    cantidad
+    precio
+  }
+}
