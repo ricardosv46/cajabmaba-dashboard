@@ -8,6 +8,7 @@ import useToggle from '../../../../hooks/useToggle'
 import { useAsientosEventos } from '../../../../services/useAsientosEventos'
 import { useBloqueoAsientoAbono } from '../../../../services/useBloqueoAsientoAbono'
 import { useBloqueoAsientoEvento } from '../../../../services/useBloqueoAsientoEvento'
+import { useBloques } from '../../../../services/useBloques'
 import useButacas from '../../../../services/useButacas'
 import { usePreciosRefs } from '../../../../services/usePreciosRefs'
 import { genNombreFilas } from '../../../../utils/genNombreFilas'
@@ -21,6 +22,7 @@ const EventoId = () => {
 	const { createBloqueoAsiento } = useBloqueoAsientoEvento()
 	const evento = eventos.evento
 	const toast = useToast()
+	const { bloques, loading: loadingBloques } = useBloques({ feriaId: 1, tendido: innerValue })
 	const { asientos, refetch: refetchAsientos } = useAsientosEventos({
 		eventoId: evento?.eventoId,
 		tendido: innerValue
@@ -93,26 +95,21 @@ const EventoId = () => {
 						_dark={{ borderColor: 'second.500' }}
 						py={5}
 						mt={5}>
-						<Select
-							innerValue={innerValue!}
-							setInnerValue={setInnerValue}
-							selectOptions={categorias!}
-							label='Tendido'
-						/>
+						<Select innerValue={innerValue!} setInnerValue={setInnerValue} selectOptions={categorias!} label='Tendido' />
 
 						{dataAsientos?.length && innerValue?.length > 0 && (
 							<Asientos
 								{...{
-									data: dataAsientos!,
+									bloques,
+									data: dataAsientos,
 									desabilitados: asientos,
 									seleccionados,
 									setSeleccionados,
 									nombreFilas: genNombreFilas(innerValue)
 								}}
 								tipo='evento'
-								evento={evento?.eventoId}
 								doble={innerValue === 'T2S' ? 'Tendido2' : innerValue === 'T3' ? 'Tendido3' : 'Ruedo'}
-								direccion={innerValue === 'T3A' ? 'end' : innerValue === 'T3B' ? 'start' : 'center'}
+								direccion={innerValue === 'T1I' ? 'start' : innerValue === 'T4P' ? 'start' : 'center'}
 								id={innerValue}
 							/>
 						)}

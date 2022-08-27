@@ -99,7 +99,7 @@ const Abono = () => {
 								}}
 								tipo='abono'
 								doble={innerValue === 'T2S' ? 'Tendido2' : innerValue === 'T3' ? 'Tendido3' : 'Ruedo'}
-								direccion={innerValue === 'T3A' ? 'end' : innerValue === 'T3B' ? 'start' : 'center'}
+								direccion={innerValue === 'T1I' ? 'start' : innerValue === 'T4P' ? 'start' : 'center'}
 								id={innerValue}
 							/>
 						)}
